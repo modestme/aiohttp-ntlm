@@ -41,12 +41,6 @@ if __name__ == "__main__":
     asyncio.run(test_ntlm_auth_middleware())
 ```
 
-## Requirements
-
-- Python >= 3.11
-- aiohttp >= 3.12.13
-- pyspnego >= 0.11.2
-
 ## Implementation Notes
 
 This middleware is inspired by [requests_ntlm](https://github.com/requests/requests-ntlm) and implemented for aiohttp.
