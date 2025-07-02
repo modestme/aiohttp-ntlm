@@ -1,6 +1,6 @@
 [project]
 name = "aiohttp-ntlm"
-version = "0.1.0"
+version = "0.1.1"
 description = "NTLM authentication middleware for aiohttp"
 authors = [
     {name = "lowkeymodestme@gmail.com"}
