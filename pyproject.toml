@@ -1,0 +1,61 @@
+[project]
+name = "aiohttp-ntlm"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "lowkeymodestme@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp (>=3.12.13,<4.0.0)",
+    "pyspnego (>=0.11.2,<0.12.0)",
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [
+    { include = "aiohttp_ntlm", from = "src" },
+]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.12.1"
+mypy = "^1.16.1"
+pytest = "^8.0.0"
+pytest-asyncio = "^0.23.5"
+pytest-aiohttp = "^1.0.5"
+
+[tool.ruff]
+target-version = "py311"
+exclude = [".venv", "build"]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+pydocstyle.convention = "google"
+
+[tool.mypy]
+disallow_untyped_defs = true
+disallow_any_unimported = true
+no_implicit_optional = true
+warn_unused_ignores = true
+
+exclude = "^(build/|dist/)"
